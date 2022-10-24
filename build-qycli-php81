@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sed -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' -i /etc/apt/sources.list
+#sed -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' -i /etc/apt/sources.list
 
 mkdir /etc/apt/disabled.apt.conf.d/
 dpkg-divert --divert /etc/apt/disabled.apt.conf.d/99needrestart --rename /etc/apt/apt.conf.d/99needrestart
