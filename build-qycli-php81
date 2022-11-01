@@ -56,19 +56,24 @@ rm configure
     --without-sqlite3 \
     --without-pdo-sqlite \
     --with-mysqli \
+    --with-pdo-mysql \
+    --enable-ctype \
     --with-curl \
     --enable-exif \
     --enable-mbstring \
     --with-zip \
+    --with-bz2 \
     --enable-bcmath \
     --with-jpeg \
     --with-webp \
     --enable-intl \
+    --enable-pcntl \
     --with-sodium \
     --with-zlib \
+    --with-freetype \
     --enable-soap \
-    --enable-gd=shared \
-    --with-imagick=shared \
+    --enable-gd \
+    --with-imagick \
     --enable-redis=shared
 
 # Compile
@@ -124,4 +129,3 @@ cp "$interpreter_old" "$result_volume_dir""$lib_path_full""$(basename "$interpre
 
 patchelf --set-interpreter "$interpreter_new" --set-rpath "$origin_lib_path" "$result_volume_dir""$install_prefix"/sbin/php-fpm
 patchelf --set-interpreter "$interpreter_new" --set-rpath "$origin_lib_path" "$result_volume_dir""$install_prefix"/bin/php
-
